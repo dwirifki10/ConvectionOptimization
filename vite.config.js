@@ -11,17 +11,29 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       injectRegister: 'auto',
+      devOptions: {
+        enabled: true
+      },
       workbox: {
-        cleanupOutdatedCaches: true,
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,json,vue,txt,woff2}']
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}']
       },
+      includeAssets: ['favicon.ico'],
       manifest: {
-        name: 'My PWA App',
-        short_name: 'My App',
+        name: 'Convection Optimization',
+        short_name: 'ConvOp',
+        description: 'Convection Optimization',
         theme_color: '#ffffff',
-        background_color: '#ffffff',
-        display: 'standalone',
-      },
+        icons: [
+          {
+            src: 'Logo.png',
+            type: 'image/png'
+          },
+          {
+            src: 'Logo.png',
+            type: 'image/png'
+          }
+        ]
+      }
     })
   ],
   resolve: {
